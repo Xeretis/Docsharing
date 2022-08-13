@@ -11,12 +11,10 @@
             @endforeach
         @endisset
     </div>
-    @can('update', $post)
+    @can('update', $space)
         <a class="self-center" href="{{ route('posts.edit', ['post' => $post->id]) }}">
             <x-tabler-icon icon="edit" strokeWidth="1.5" class="h-6 ml-2"/>
         </a>
-    @endcan
-    @can('delete', $post)
         <form class="self-center" method="POST"
               action="{{ route('posts.delete', ['post' => $post->id]) }}">
             @method('DELETE')

@@ -18,7 +18,7 @@
         <div class="pt-2">
             <h1 class="text-xl font-medium">Posts</h1>
             @foreach($space->posts as $post)
-                <livewire:post-card :post="$post"/>
+                <livewire:post-card :post="$post" :space="$space"/>
             @endforeach
         </div>
     </div>

@@ -18,7 +18,7 @@ class PostController extends Controller
 
     public function delete(Post $post)
     {
-        $this->authorize('delete', $post);
+        $this->authorize('update', $post->space);
 
         $post->delete();
 
@@ -27,7 +27,7 @@ class PostController extends Controller
 
     public function edit(Post $post)
     {
-        $this->authorize('update', $post);
+        $this->authorize('update', $post->space);
 
         return view('posts.edit', [
             'post' => $post,

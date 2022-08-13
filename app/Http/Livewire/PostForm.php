@@ -11,7 +11,7 @@ class PostForm extends Component
 {
     use WithFileUploads;
 
-    public ?Space $space;
+    public Space $space;
     public ?Post $post;
 
     public string $title;

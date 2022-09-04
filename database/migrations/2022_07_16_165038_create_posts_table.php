@@ -19,7 +19,7 @@ return new class extends Migration {
             $table->string('title');
             $table->text('description');
             $table->json('files')->nullable();
-            $table->foreignId('space_id')->constrained();
+            $table->foreignId('space_id')->constrained()->onDelete("cascade");
 
             $table->timestamps();
         });

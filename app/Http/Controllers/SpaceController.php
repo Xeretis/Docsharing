@@ -132,4 +132,13 @@ class SpaceController extends Controller
 
         return redirect()->route('spaces.index');
     }
+
+    public function delete(Space $space)
+    {
+        $this->authorize('delete', $space);
+
+        $space->delete();
+
+        return redirect()->route('spaces.index');
+    }
 }

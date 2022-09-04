@@ -35,11 +35,12 @@ Route::middleware('auth')->group(function () {
         Route::put('/{space}', 'update')->name('update');
 
         Route::get('/{space}', 'view')->name('view');
+        Route::delete('/{space}', 'delete')->name('delete');
     });
 
     Route::prefix('posts')->name('posts.')->controller(PostController::class)->group(function () {
         Route::get('/{space}/create', 'create')->name('create');
-        Route::delete('/{post}/delete', 'delete')->name('delete');
+        Route::delete('/{post}', 'delete')->name('delete');
         Route::get('/{post}/edit', 'edit')->name('edit');
     });
 });

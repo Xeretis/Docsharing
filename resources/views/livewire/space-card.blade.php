@@ -28,6 +28,13 @@
         <a href="{{ route('spaces.edit', ['space' => $space->hash]) }}" class="self-center">
             <x-tabler-icon icon="edit" strokeWidth="1.5" class="h-6 ml-2"/>
         </a>
+        <form method="POST" class="self-center" action="{{ route('spaces.delete', ['space' => $space->hash]) }}">
+            @method('DELETE')
+            @csrf
+            <button type="submit" class="self-center">
+                <x-tabler-icon icon="trash" strokeWidth="1.5" class="h-6 ml-2"/>
+            </button>
+        </form>
     @endcan
     @can('view', $space)
         <a href="{{ route('spaces.view', ['space' => $space->hash]) }}" class="self-center">
